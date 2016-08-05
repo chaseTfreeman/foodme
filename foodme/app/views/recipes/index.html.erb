@@ -1,0 +1,10 @@
+
+
+<div id="recipes" class="transitions-enabled">
+  <% @recipes.each do |recipe| %>
+  <div class="recipe_profile">
+<h2><%= recipe.title %></h2>
+<%= link_to image_tag("#{recipe.img_url}"), recipe_path(recipe) %>
+</div>
+  <% end %>
+</div>

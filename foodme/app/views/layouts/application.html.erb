@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food.Me</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header>
+    <h1>Food.Me</h1>
+<nav>
+  <ul>
+  <li><%= link_to "Boxes", boxes_path(@box) %> </li>
+  <li><%= link_to "Recipes", recipes_path(@recipe) %></li>
+  <li><%= link_to "New Box", new_box_path %></li>
+  <li><%= link_to "Add Recipe (+)", new_recipe_path %></li>
+  </ul>
+</nav>
+</header>
+
+  <%= yield %>
+</body>
+</html>

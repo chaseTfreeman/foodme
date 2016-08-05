@@ -1,0 +1,10 @@
+
+<div id="boxes" class="transitions-enabled">
+  <% @boxes.each do |box| %>
+  <div class="masonry_box">
+    <h2><%= box.title %></h2>
+    <%= link_to image_tag("#{box.img_url}"), box_path(box) %>
+  </div>
+  <br>
+    <% end %>
+</div>
