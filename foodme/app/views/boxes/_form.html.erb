@@ -1,3 +1,8 @@
+<section class="module parallax parallax-2">
+  <div class="container">
+<h1>New Box</h1>
+</div>
+</section>
 
 <div class="form">
 <% @box.errors.full_messages.each do |message| %>
@@ -7,7 +12,6 @@
 <% end %>
 
 <%= form_for @box do |f| %>
-<h2>Create New box</h2>
 <%= f.label :theme %>
 <%= f.text_field :theme %>
 
@@ -16,7 +20,6 @@
 
   <%= f.label :img_url %>
   <%= f.text_field :img_url %>
-
 
   <%= f.submit %>
 <% end %>

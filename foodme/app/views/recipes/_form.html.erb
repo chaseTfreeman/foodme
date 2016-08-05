@@ -1,11 +1,10 @@
-
+<section class="module parallax parallax-3">
+  <div class="container">
+    <h1>New Recipe</h1>
 <div class="form">
 <%= form_for @recipe do |f| %>
-<h2>Create New Character</h2>
   <%= f.label :title %>
   <%= f.text_field :title %>
-
-
 
   <!-- f.select( :box_id, box.all.collect { |box| [box.title, box.id] } ) -->
 
@@ -16,3 +15,6 @@
   <%= f.submit %>
 <% end %>
 </div>
+
+</div>
+</section>
