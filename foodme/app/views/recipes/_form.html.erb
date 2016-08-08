@@ -2,17 +2,26 @@
   <div class="container">
     <h1>New Recipe</h1>
 <div class="form">
-<%= form_for @recipe do |f| %>
+<%= form_for @recipe, :html => {:multipart => true} do |f| %>
+
+<p>
   <%= f.label :title %>
   <%= f.text_field :title %>
-
+</p>
   <!-- f.select( :box_id, box.all.collect { |box| [box.title, box.id] } ) -->
 
+<p>
+  <%= f.label :directions %>
+  <%= f.text_field :directions %>
+</p>
+<p>
   <%= f.label :img_url %>
-  <%= f.text_field :img_url %>
+  <%= f.file_field :image %>
+</p>
 
-
+<p>
   <%= f.submit %>
+</p>
 <% end %>
 </div>
 

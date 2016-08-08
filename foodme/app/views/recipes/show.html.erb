@@ -12,7 +12,9 @@
                                                 data: { confirm: 'Are you sure?' } %>
 </h3>
 <hr>
-<img src="<%= @recipe.img_url %>">
+
+<%= image_tag @recipe.img_url if @recipe.img_url? %>
+<%= image_tag @recipe.image.to_s if @recipe.image? %>
 
 
  <!-- @recipe.box_id  -->
