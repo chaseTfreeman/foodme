@@ -1,7 +1,7 @@
 class Box < ApplicationRecord
 
-# has_many :collections
-# has_many :recipes, through: :collections
+has_many :collections
+has_many :recipes, through: :collections
 
-has_many :recipes
+# has_many :recipes
 end
