@@ -8,8 +8,11 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
 </p>
-  <!-- f.select( :box_id, box.all.collect { |box| [box.title, box.id] } ) -->
 
+<p>
+  <%= f.label :igredients %>
+  <%= f.text_field :ingredients%>
+</p>
 <p>
   <%= f.label :directions %>
   <%= f.text_field :directions %>
@@ -18,7 +21,7 @@
   <%= f.label :image %>
   <%= f.file_field :image %>
 </p>
-
+<%= f.select( :title, Box.all.collect { |box| [box.title, box.id] } ) %>
 <p>
   <%= f.submit %>
 </p>

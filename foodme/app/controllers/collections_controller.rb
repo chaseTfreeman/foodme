@@ -14,6 +14,8 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = Collection.create!(collection_params)
+    @recipe = Recipe.all
+    @box = Box.all
     redirect_to @collection
   end
 

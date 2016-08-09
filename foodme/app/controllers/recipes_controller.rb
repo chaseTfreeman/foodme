@@ -12,10 +12,14 @@ class RecipesController < ApplicationController
 
     def new
       @recipe = Recipe.new
+      @collection = Collection.all
+      @box = Box.all
     end
 
     def create
       @recipe = Recipe.create!(recipe_params)
+      @box = Box.all
+      @collection = Collection.all
       redirect_to @recipe
     end
 

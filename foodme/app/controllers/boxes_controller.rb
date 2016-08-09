@@ -15,8 +15,14 @@ class BoxesController < ApplicationController
       @box = Box.new
     end
 
+    def add
+      @box = Box.new
+    end
+
     def create
       @box = Box.create!(box_params)
+      @recipe = Recipe.all
+      @collection = Collection.all
       redirect_to @box
     end
 

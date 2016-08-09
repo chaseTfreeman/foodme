@@ -1,19 +1,18 @@
-<section class="module parallax parallax-2">
+<section class="module parallax parallax-3">
   <div class="container">
-<h1>New Box</h1>
-</div>
-</section>
-
+    <h1>Add New Recipe to Box</h1>
 <div class="form">
 <%= form_for @box, :html => {:multipart => true} do |f| %>
 
 <p>
-  <%= f.label :theme %>
-  <%= f.text_field :theme %>
-</p>
-<p>
   <%= f.label :title %>
   <%= f.text_field :title %>
+</p>
+  <!-- f.select( :box_id, box.all.collect { |box| [box.title, box.id] } ) -->
+
+<p>
+  <%= f.label :directions %>
+  <%= f.text_field :directions %>
 </p>
 <p>
   <%= f.label :image %>
@@ -25,3 +24,6 @@
 </p>
 <% end %>
 </div>
+
+</div>
+</section>
