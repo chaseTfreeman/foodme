@@ -30,9 +30,14 @@
               <div class="masonry_box">
                 <h3><%= box.theme %></h3>
                 <h4><%= box.title %></h4>
-                <%= link_to image_tag("#{box.img_url}"), box_path(box) %>
-                <a class="btn btn-primary" href="#">View Box</a>
-                <a class="btn btn-primary" href="#">Add Box</a>
+
+
+                <%= link_to image_tag("#{box.image}"), box_path(box) %>
+                <div class="btn btn-primary"><%= link_to "View Box", box_path(box) %></div>
+                <div class="btn btn-primary" href="#">	&hearts;</div>
+                <% box.collections.each do |collection| %>
+                <h2><%= collection.recipe_id %></h2>
+                <% end %>
               </div>
               <% end %>
 

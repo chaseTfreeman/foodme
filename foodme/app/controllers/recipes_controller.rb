@@ -2,10 +2,12 @@ class RecipesController < ApplicationController
 
     def index
       @recipes = Recipe.all
+      @boxes = Box.all
     end
 
     def show
       @recipe = Recipe.find(params[:id])
+      @box = @recipe.boxes
     end
 
     def new
@@ -36,6 +38,6 @@ class RecipesController < ApplicationController
 
     private
     def recipe_params
-      params.require(:recipe).permit(:title, :img_url, :ingredients, :directions, :image)
+      params.require(:recipe).permit(:title, :ingredients, :directions, :image)
     end
   end

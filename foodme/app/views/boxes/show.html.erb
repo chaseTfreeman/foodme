@@ -5,19 +5,33 @@
 <div id="boxes">
 <h2>
   <%= @box.title %>
-  <h2>
-  <h3><%= link_to "Edit", edit_box_path(@box) %>
-  <%= link_to "Delete", box_path(@box),
-                                        method: :delete,
-                                        data: { confirm: 'Are you sure?' } %></h3>
+</h2>
 
+<p><%= link_to "Edit Box |", edit_box_path(@box) %>
+  <%= link_to " Delete Box", box_path(@box),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %><p>
 <hr>
 <div class="boxes">
-<img class="box_profile" src="<%= @box.img_url %>">
+<img class="box_profile" src="<%= @box.image %>">
 </div>
-<p>Box Theme:</p><h4><%= @box.theme %></h4>
 
-<div>
-<h4> insert recipe image here<h4>
+<div class="row">
+  <div id="recipes" class="transitions-enabled">
+    <div class="recipe-wrapper">
+      <div class="col-md-4">
+      <% @box.recipes.each do |recipe| %>
+        <div class="masonry_box">
+          <h4><%= recipe.title %></h4>
+          <%= link_to image_tag("#{recipe.image}"), recipe_path(recipe) %>
+          <a class="btn btn-primary" href="#">View recipe</a>
+          <a class="btn btn-primary" href="#">&hearts;</a>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 </div>

@@ -3,6 +3,8 @@ class BoxesController < ApplicationController
 
     def index
       @boxes = Box.all
+      @recipes = Recipe.all
+      @collections = Collection.all
     end
 
     def show
@@ -36,7 +38,6 @@ class BoxesController < ApplicationController
 
     private
     def box_params
-      params.require(:box).permit(:title, :img_url, :motto, :house_id)
+      params.require(:box).permit( :theme, :title, :image)
     end
   end
-  
