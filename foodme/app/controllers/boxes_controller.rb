@@ -10,7 +10,8 @@ class BoxesController < ApplicationController
     end
 
     def new
-      @box = Box.new
+      @box = current_user.boxes.build
+
     end
 
     def add
@@ -18,7 +19,8 @@ class BoxesController < ApplicationController
     end
 
     def create
-      @box = Box.create!(box_params)
+      @box = current_user.boxes.build(box_params)
+      @box.save!
       redirect_to @box
     end
 
