@@ -12,14 +12,11 @@ class RecipesController < ApplicationController
 
     def new
       @recipe = Recipe.new
-      @collection = Collection.all
-      @box = Box.all
     end
 
     def create
+      binding.pry
       @recipe = Recipe.create!(recipe_params)
-      @box = Box.all
-      @collection = Collection.all
       redirect_to @recipe
     end
 
@@ -42,6 +39,6 @@ class RecipesController < ApplicationController
 
     private
     def recipe_params
-      params.require(:recipe).permit(:title, :ingredients, :directions, :image)
+      params.require(:recipe).permit(:title, :ingredients, :directions, :image, :box_ids)
     end
   end

@@ -3,8 +3,6 @@ class BoxesController < ApplicationController
 
     def index
       @boxes = Box.all
-      @recipes = Recipe.all
-      @collections = Collection.all
     end
 
     def show
@@ -21,8 +19,6 @@ class BoxesController < ApplicationController
 
     def create
       @box = Box.create!(box_params)
-      @recipe = Recipe.all
-      @collection = Collection.all
       redirect_to @box
     end
 
@@ -44,6 +40,6 @@ class BoxesController < ApplicationController
 
     private
     def box_params
-      params.require(:box).permit( :theme, :title, :image)
+      params.require(:box).permit( :theme, :title, :image, [:id, :description, :done, :_destroy])
     end
   end

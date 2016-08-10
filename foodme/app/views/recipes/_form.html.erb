@@ -21,7 +21,7 @@
   <%= f.label :image %>
   <%= f.file_field :image %>
 </p>
-<%= f.select( :title, Box.all.collect { |box| [box.title, box.id] } ) %>
+<%= f.select( :box_ids, Box.all.collect { |box| [box.title, box.id] } ) %>
 <p>
   <%= f.submit %>
 </p>

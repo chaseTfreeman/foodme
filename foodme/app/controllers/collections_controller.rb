@@ -1,7 +1,6 @@
 class CollectionsController < ApplicationController
   def index
     @collections = Collection.all
-    @boxes = Box.all
   end
 
   def show
@@ -14,8 +13,6 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = Collection.create!(collection_params)
-    @recipe = Recipe.all
-    @box = Box.all
     redirect_to @collection
   end
 
@@ -38,6 +35,6 @@ class CollectionsController < ApplicationController
 
   private
   def collection_params
-    params.require(:collection).permit(:box_id, :recipe_id)
+    params.require(:collection).permit(:box_id, :recipe_id, [:id, :description, :done, :_destroy])
   end
 end
