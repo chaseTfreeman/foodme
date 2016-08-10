@@ -16,9 +16,9 @@
 
                 <%= link_to image_tag("#{box.image}"), box_path(box) %>
                 <div class="btn btn-primary"><%= link_to "View Box", box_path(box) %></div>
-                <div class="btn btn-primary" href="#">	&hearts;</div>
-                <% box.collections.each do |collection| %>
-                <% end %>
+                <div class="btn btn-primary"><%= link_to " Delete Box", box_path(box),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></div>
               </div>
               <% end %>
 

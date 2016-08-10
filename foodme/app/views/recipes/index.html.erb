@@ -13,8 +13,10 @@
                 <div class="masonry_box">
                   <h4><%= recipe.title %></h4>
                   <%= link_to image_tag("#{recipe.image}"), recipe_path(recipe) %>
-                  <a class="btn btn-primary" href="#">View recipe</a>
-                  <a class="btn btn-primary" href="#">&hearts;</a>
+                    <div class="btn btn-primary"><%= link_to "View Recipe", recipe_path(recipe) %></div>
+                  <div class="btn btn-primary"><%= link_to 'Delete', recipe_path(recipe),
+                                                                method: :delete,
+                                                                data: { confirm: 'Are you sure?' } %></div>
                 </div>
                 <% end %>
               </div>
