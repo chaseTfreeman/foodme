@@ -8,16 +8,21 @@
   */
   @import "bootstrap-sprockets";
   @import "bootstrap";
-.sign-up {
+.devise {
   padding-top: 200px;
   margin: 0 auto;
   width: 30%;
 }
-
+.welcome-page {
+  margin-top: 200px;
+}
 .user-info{
   margin: 3px;
   padding-top: 20px
 
+}
+span {
+  color: gray;
 }
 
 a {

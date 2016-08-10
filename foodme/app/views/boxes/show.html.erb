@@ -6,11 +6,13 @@
 <h2>
   <%= @box.title %>
 </h2>
+<div class="btn btn-primary"><%= link_to "Edit Box", edit_box_path(@box) %></div>
+<div class="btn btn-primary"><%= link_to " Delete Box", box_path(@box),
+method: :delete,
+data: { confirm: 'Are you sure?' } %></div>
 
-<p><%= link_to "Edit Box |", edit_box_path(@box) %>
-  <%= link_to " Delete Box", box_path(@box),
-  method: :delete,
-  data: { confirm: 'Are you sure?' } %><p>
+<h6>Created By: <%= @box.user.email %></h6>
+
 <hr>
 <div class="boxes">
 <img class="box_profile" src="<%= @box.image %>">
