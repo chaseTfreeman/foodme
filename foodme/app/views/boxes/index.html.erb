@@ -36,7 +36,6 @@
                 <div class="btn btn-primary"><%= link_to "View Box", box_path(box) %></div>
                 <div class="btn btn-primary" href="#">	&hearts;</div>
                 <% box.collections.each do |collection| %>
-                <h2><%= collection.recipe_id %></h2>
                 <% end %>
               </div>
               <% end %>

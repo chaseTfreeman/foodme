@@ -15,7 +15,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-
     @recipe = Recipe.create!(recipe_params)
     Collection.create!(recipe_id: @recipe.id, box_id: params[:recipe][:box_ids])
     redirect_to @recipe
