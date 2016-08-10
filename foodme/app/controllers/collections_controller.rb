@@ -35,6 +35,6 @@ class CollectionsController < ApplicationController
 
   private
   def collection_params
-    params.require(:collection).permit(:box_id, :recipe_id, [:id, :description, :done, :_destroy])
+    params.require(:collection).permit(:box_id, :recipe_id)
   end
 end
