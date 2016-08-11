@@ -6,6 +6,14 @@
   margin: 0 auto;
 
 }
+.col-md-6#p{
+  text-align: left;
+}
+.ingredients, .recipe-photo, .recipe-directions, .recipe-title {
+  border: 3px solid black;
+  margin: 10px;
+  padding:20px;
+}
 
 #recipes{
   margin: 0 auto;

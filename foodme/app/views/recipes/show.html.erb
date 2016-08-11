@@ -5,21 +5,44 @@
 
 
 <div class="whitespace"></div>
-<div class="recipe_profile">
-<div><%= button_to 'Add Recipe to Box' ,{:controller => 'boxes', :action => 'create', :recipe_id => @recipe.id, :value => 0}, {:method => :post} %>
 
-<h1>Title: <%= @recipe.title %></h1>
-<div class="btn btn-primary"><%= link_to "Edit", edit_recipe_path(@recipe) %></div>
-<div class="btn btn-primary"><%= link_to 'Delete', recipe_path(@recipe),
-                                              method: :delete,
-                                              data: { confirm: 'Are you sure?' } %></div>
-<hr>
+<!-- <div><%= button_to 'Add Recipe to Box' ,{:controller => 'boxes', :action => 'create', :recipe_id => @recipe.id, :value => 0}, {:method => :post} %></div> -->
 
-
-<%= image_tag @recipe.image.to_s %>
 
 
  <!-- @recipe.box_id  -->
+ <div class="container-fluid">
+ 	<div class="row">
+ 		<div class="col-md-12">
+      <div class="recipe-title">
+      <h1><%= @recipe.title %></h1>
+    </div>
+ 			<div class="row">
+ 				<div class="col-md-6">
+          <div class="recipe-photo">
+ 				<%= image_tag @recipe.image.to_s %><br>
+        <div class="btn btn-primary"><%= link_to "Edit", edit_recipe_path(@recipe) %></div>
+        <div class="btn btn-primary"><%= link_to 'Delete', recipe_path(@recipe),
+                                                      method: :delete,
+                                                      data: { confirm: 'Are you sure?' } %></div>
 
-</div>
-</div>
+ 				</div>
+        </div>
+ 				<div class="col-md-6">
+          <div class="ingredients">
+          <h4>Required Ingredients:</h4>
+          <p><%= @recipe.ingredients %></p>
+        </div>
+ 				</div>
+ 			</div>
+ 			<div class="row">
+ 				<div class="col-md-12">
+          <div class="recipe-directions">
+            <h4>Directions:</h4>
+          <p><%= @recipe.directions %></p>
+        </div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>

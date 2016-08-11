@@ -15,3 +15,9 @@
 //= require jquery_ujs
 //= require masonry/jquery.masonry
 //= require_tree .
+
+$(document).ready(function () {
+
+    $(".player").mb_YTPlayer();
+
+});
